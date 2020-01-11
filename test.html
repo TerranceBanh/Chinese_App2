@@ -8,6 +8,7 @@
     <script src="./modules/isDatatype.js"></script>
 </head>
 <body>
+    <button onclick="console.log('test')"></button>
     <script>
         // // TABLE DATA FORMULA
 
@@ -114,124 +115,6 @@
         //     num = Math.floor(Math.random() * sampleArr.length)
         //     console.log(num)
         // }
-
-        const generateMultiQA = ({ question, answers, choices, library }) => { // Requires multiple choice
-    
-    if (typeof question.text === undefined) {
-        console.error('"question.text" is undefined')
-        return "randomQA() Error"
-    }
-    else if (!isString(question.text)) {
-        console.error('"question.text" requires string data type')
-        return "randomQA() Error"
-    }
-
-    if (typeof question.type === undefined) {
-        console.error('"question.type" is undefined')
-        return "randomQA() Error"
-    }
-    else if (!isString(question.type)) {
-        console.error('"question.type" requires string data type')
-        return "randomQA() Error"
-    }
-
-    for (let i = 0,
-        types = [
-            'multiChoice','multiAnswer','fillInTheBlank',
-            'labelImage','match','trueFalse',
-        ],
-        length = types.length; 
-        i < length; 
-        i++
-    ) {
-        if (question.type === types[i]) break 
-        else if (i === length - 1) {
-            console.error(`"question.type" requires one of the following strings: ${types}`)
-            return "randomQA() Error"
-        }
-    }
-
-    if (typeof question.addon === undefined) {
-        console.error('"question.addon" is undefined')
-        return "randomQA() Error"
-    }
-    else if (!isArray(question.addon)) {
-        console.error('"question.addon" requires an array data type')
-        return "randomQA() Error"
-    }
-    
-    for (let i = 0, length = question.addon.length; i < length; i++) {
-        if (!isNumber(question.addon[i]) && !isString(question.addon[i])) {
-            console.error(`"question.addon[${i}]" requires string/number data type`)
-            console.log(question.addon[i])
-            return "randomQA() Error"
-        }
-    }
-    
-    if (!isArray(answers)) {
-        console.error('"answers" requires array data type') 
-        return "randomQA() Error"
-    }
-
-    if (
-        ((
-            allTrue = x => x.reduce((e1, e2) => e1 === false ? false :e1 === e2),
-            boolArr1 = [],
-            boolArr2 = [],
-            boolArr3 = [],
-            bool = true,
-            length = answers.length
-        ) => {
-            for (let i = 0; i < length; i++) {
-                // console.log(`Is Array: ${isArray(answers[i])}`)
-                if (isArray(answers[i])) {
-                    boolArr1[i] = true
-                    for (let j = 0, length = answers[i].length; j < length; j++) {
-                        // console.log(answers[i][j])
-                        // console.log(`Is Number/String: ${isString(answers[i][j]) || isNumber(answers[i][j])}`)
-                        if (isString(answers[i][j]) || isNumber(answers[i][j])) boolArr3[j] = true
-                        else boolArr3[j] = false
-                    }
-                }
-                else boolArr1[i] = false
-            }
-            for (let i = 0; i < length; i++) {
-                // console.log(`Is Number/String: ${isString(answers[i]) || isNumber(answers[i])}`)
-                if (isString(answers[i]) || isNumber(answers[i])) boolArr2[i] = true
-                else boolArr2[i] = false
-            }
-
-            if (allTrue(boolArr1) || allTrue(boolArr2)) bool = false
-
-            if (!allTrue(boolArr1) && bool) {
-                console.error('"answers" elements requires either array or string/number data type') 
-                return !bool
-            }
-
-            if (!allTrue(boolArr2) && bool) {
-                console.error('"answers" elements requires either array or string/number data type') 
-                return !bool
-            }
-            if (boolArr3.length !== 0 && !allTrue(boolArr3)) {
-                console.error('"answers" nested array elements requires string/number data type') 
-                return !bool
-            }
-
-
-            if (boolArr3.length !== 0 && !answers.every((e, i, arr) => {
-                console.log(`${i} !== ${arr[i].length - 1} = ${i !== arr[i].length - 1}`)
-                if (i === arr.length - 1) return true
-                else if (i !== arr[i].length - 1) return arr[i].length === arr[i+1].length
-                else return true
-            })) {
-                console.error('"answers" nested arrays requires the same number of elements') 
-                return !bool
-            }
-
-            return bool
-        })()
-    ) {return "randomQA() Error"}
-        }
 
 
     </script>

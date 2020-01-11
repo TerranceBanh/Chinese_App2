@@ -7,6 +7,7 @@ let questionsArr = (async () => {
         ...generateQA2('family'),
         ...generateQA2('time'),
         ...generateQA2('color'),
+        ...generateQA2('greetingsAndFarewells'),
     ]
 })()
     .then(res => 

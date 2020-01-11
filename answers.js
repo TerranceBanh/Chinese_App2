@@ -1,3 +1,4 @@
+// Have indicators of literal meaning and intended meaning and indicators to differentiate similarities
 const answers = {
     numbers: [
         { ch: '零', pinyin: 'líng', en: 'zero', }, 
@@ -194,78 +195,42 @@ const answers = {
         // {ch: '', pinyin: '', en: '', },
     
     ],
-    greetings: [
-        {ch: '你好', pinyin: '', en: 'hello', },
-        {ch: '早上好', pinyin: '', en: 'good morning', },
-        {ch: '下午好', pinyin: '', en: 'good afternoon', },
-        {ch: '晚上好', pinyin: '', en: 'good evening', },
-        {ch: '晚安', pinyin: '', en: 'good night', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
-        {ch: '', pinyin: '', en: '', },
+    greetingsAndFarewells: [
+        {ch: '你好', pinyin: 'nǐ hǎo', en: 'hello', },
+        {ch: '您好', pinyin: 'nín hǎo', en: 'hello (polite)', },
+        {ch: '你好吗', pinyin: 'nǐ hǎo ma？', en: 'how are you?', },
+        {ch: '您好吗', pinyin: 'nín hǎo ma？', en: 'how are you? (polite)', },
+        {ch: '拜拜', pinyin: 'bài bài', en: 'bye bye', },
+        {ch: '再会', pinyin: 'zài huì', en: '[we will] hello again', },
+        {ch: '明天见', pinyin: 'míng tiān jiàn', en: 'see you tomorrow', },
+        {ch: '喂', pinyin: 'wèi', en: 'hey/hi (answering the phone)', },
+        {ch: '再见', pinyin: 'zài jiàn', en: 'goodbye', },
+        {ch: '早上好，你早，早', pinyin: 'zǎo shang hǎo, nǐ zǎo, zǎo', en: 'good morning', },
+        {ch: '下午好', pinyin: 'xià wǔ hǎo', en: 'good afternoon', },
+        {ch: '晚上好', pinyin: 'wǎn shàng hǎo', en: 'good evening', },
+        {ch: '晚安', pinyin: 'wǎn\'ān', en: 'good night', },
+        {ch: '你怎么样', pinyin: 'nǐ zěn me yàng?', en: 'How is it going', },
+        {ch: '你的周末怎么样', pinyin: 'nǐ de zhōumò zěnme yàng', en: 'How was your weekend', },
+        {ch: '回头见', pinyin: 'huí tóu jiàn', en: 'see you soon', },
+        {ch: '下个星期见', pinyin: 'xià gè xīng qí jiàn', en: 'see you next week', },
+        {ch: '改天再聊', pinyin: 'gǎi tiān zài liáo', en: 'talk to you later', },
+        {ch: '慢走', pinyin: 'màn zǒu', en: 'Take care', },
+        
+        
     ],
 }
 
-const {
-    numbers,
-    pronouns,
-    family,
-    time,
-    color,
-    greetings
-} = answers
+for (let prop in answers) {
+    for (let i = 0, length = answers[prop].length; i < length; i++) {
+        answers[prop][i].audio = `
+            <button type="button" onclick="document.querySelector('[src=\\'./chinese/${answers[prop][i].ch}.mp3\\']').play()">
+                &#9654;
+                <audio preload="none" src="./chinese/${answers[prop][i].ch}.mp3"></audio>
+            </button>
+        `
+    }
+}
 
-
-
-for (let i = 0, length = numbers.length; i < length; i++) {
-    numbers[i].audio = `
-        <button type="button" onclick="document.querySelector('[src=\\'./chinese/${numbers[i].ch}.mp3\\']').play()">
-            &#9654;
-            <audio preload="none" src="./chinese/${numbers[i].ch}.mp3"></audio>
-        </button>
-    `
-}
-for (let i = 0, length = pronouns.length; i < length; i++) {
-    pronouns[i].audio = `
-        <button type="button" onclick="document.querySelector('[src=\\'./chinese/${pronouns[i].ch}.mp3\\']').play()">
-            &#9654;
-            <audio preload="none" src="./chinese/${pronouns[i].ch}.mp3"></audio>
-        </button>
-    `
-}
-for (let i = 0, length = family.length; i < length; i++) {
-    family[i].audio = `
-        <button type="button" onclick="document.querySelector('[src=\\'./chinese/${family[i].ch}.mp3\\']').play()">
-            &#9654;
-            <audio preload="none" src="./chinese/${family[i].ch}.mp3"></audio>
-        </button>
-    `
-}
-for (let i = 0, length = time.length; i < length; i++) {
-    time[i].audio = `
-        <button type="button" onclick="document.querySelector('[src=\\'./chinese/${time[i].ch}.mp3\\']').play()">
-            &#9654;
-            <audio preload="none" src="./chinese/${time[i].ch}.mp3"></audio>
-        </button>
-    `
-}
-for (let i = 0, length = color.length; i < length; i++) {
-    color[i].audio = `
-        <button type="button" onclick="document.querySelector('[src=\\'./chinese/${color[i].ch}.mp3\\']').play()">
-            &#9654;
-            <audio preload="none" src="./chinese/${color[i].ch}.mp3"></audio>
-        </button>
-    `
-}
 // INDICATE MALE AND FEMALE AND FORMAL AND POLITE
 // const people
 

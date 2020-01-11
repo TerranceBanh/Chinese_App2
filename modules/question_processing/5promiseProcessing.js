@@ -18,11 +18,16 @@ const promiseProcessing = (arr) => {
                         arr[i].html = () => res1
                     })
             }
+            return res
         })
-        .then(() => {
+        .then((res) => {
             for (let i = 0; i < arr.length; i++) {
                 document.write(arr[i].html())        
             }
+            return res
+        })
+        .then((res) => {
+            questionsArr = res
         })
         .catch((err) => {console.log(err)})
 }

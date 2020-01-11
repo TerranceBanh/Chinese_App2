@@ -70,6 +70,27 @@ const multiAnswer = ({ question, answers, qNum, qTotal })  => {
                             }
                             return str
                         })()}
+                        <button type="button" class="submit" onclick="
+                            ${(() => {
+                                let str = ''
+                                for (let i = 0; i < answersLength; i++) {
+                                    if (answers[i].bool) str += `
+                                        if (q${qNum}a${i+1}.checked) q${qNum}a${i+1}.parentElement.className = 'correct';
+                                        else q${qNum}a${i+1}.parentElement.className = 'correction';
+                                        q${qNum}a${i+1}.disabled = true;
+                                    `
+                                    else str += `
+                                        if (q${qNum}a${i+1}.checked) q${qNum}a${i+1}.parentElement.className = 'incorrect';
+                                        q${qNum}a${i+1}.disabled = true;
+                                    `
+                                }
+                                return str
+                            })()}
+                            this.disabled = true;
+                        " id="sub${qNum}"> SUBMIT ANSWERS HERE </button>
+
+                        
+
                     </fieldset>
                 `)})}
             })

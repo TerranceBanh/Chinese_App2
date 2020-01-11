@@ -2,15 +2,17 @@ html {
     font-size: 10px;
     padding: 0;
     margin: 0;
-
+    font-weight: 300;
+    font-family: Verdana;
 }
+
 body {
     width: auto;
     border-width: 0;
     margin: 0;
     padding: 0;
 }
-form {
+.form {
     display: block;
     justify-content: flex-start;
     align-items: flex-start;
@@ -48,7 +50,7 @@ fieldset input {
 }
 
 fieldset label {
-    font-size: 1.5rem;
+    font-size: 2rem;
     width: 75%;
     text-align: center;
 }
@@ -62,3 +64,22 @@ p {
 }
 
 
+
+button {
+    width: 10rem;
+    height: 3rem;
+}
+
+.correct{
+    background-color: green
+}
+.correction{
+    background-color: yellow
+}
+.incorrect{
+    background-color: red
+}
+.submit {
+    width: 100%;
+    margin-top: 1rem;
+}
