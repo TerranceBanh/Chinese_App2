@@ -11,7 +11,6 @@
 
 // A function that would automate the use of randomQA for more instances
 const generateQA1 = ({ question, answers, choices, library }) => { // Requires multiple choice
-    
     if (typeof question.text === undefined) {
         console.error('"question.text" is undefined')
         return "randomQA() Error"

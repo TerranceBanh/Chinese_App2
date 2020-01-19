@@ -9,44 +9,39 @@ html {
 body {
     width: auto;
     border-width: 0;
-    margin: 0;
+    margin: 0 2rem;
     padding: 0;
 }
-.form {
-    display: block;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-}
+
 fieldset{
     display: inline-block;
     width: 100%;
     max-width: 50rem;
     padding: 0;
+    margin: 0;
 }
 
-fieldset div {
+div {
     display: inline-flex;
     width: 45%;
-    height: 5rem;
+    min-height: 5rem;
     padding: 0;
     margin: 0;
     align-items: center;
     justify-content: center;
+    overflow-y: visible;
 }
 
-fieldset legend {
-    background-color: palegreen;
+legend {
+    background-color: rgba(0, 255, 255, 0.3);
     font-size: 2rem;
     margin-left: 3rem;
     border-radius: 10px;
     padding: 0.5rem;
-
 }
 
-fieldset input {
+input {
     width: 25%;
-    transform: scale(1.5)
 }
 
 fieldset label {
@@ -63,22 +58,11 @@ p {
     padding: 1rem
 }
 
-
-
 button {
     width: 10rem;
     height: 3rem;
 }
 
-.correct{
-    background-color: green
-}
-.correction{
-    background-color: yellow
-}
-.incorrect{
-    background-color: red
-}
 .submit {
     width: 100%;
     margin-top: 1rem;

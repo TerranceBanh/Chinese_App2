@@ -1,6 +1,10 @@
 'use strict'
 
 const multiAnswer = ({ question, answers, qNum, qTotal })  => {
+    // for (let i = 0, answersLen = answers.length, arr = []; i < answersLen; i++) {
+    //     arr.push(answers[i].bool)
+    //     if (i >= answersLen - 1) console.log(arr)
+    // }
     return new Promise((resolve, reject) => {
         let success = false
         let answersLength = answers.length // Caching to improve performance
@@ -53,17 +57,23 @@ const multiAnswer = ({ question, answers, qNum, qTotal })  => {
                             for (let i = 0; i < answersLength; i++) {
                                 if (answers[i].bool === true) {
                                     str += `
-                                        <div>
+                                        <div onclick="
+                                            if (q${qNum}a${i+1}.checked === true && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'rgba(0, 255, 255, 0.3)';
+                                            else if (q${qNum}a${i+1}.checked === false && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'white';     
+                                        ">
                                             <input type="checkbox" name="q${qNum}" id="q${qNum}a${i+1}">
-                                            <label for="q${qNum}a${i+1}">${answers[i].str}</label><br>
+                                            <label for="q${qNum}a${i+1}">${answers[i].str}</label>
                                         </div>
                                     `
                                 }
                                 else {
                                     str += `
-                                        <div>
+                                        <div onclick="
+                                            if (q${qNum}a${i+1}.checked === true && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'rgba(0, 255, 255, 0.3)';
+                                            else if (q${qNum}a${i+1}.checked === false && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'white';     
+                                        ">
                                             <input type="checkbox" name="q${qNum}" id="q${qNum}a${i+1}">
-                                            <label for="q${qNum}a${i+1}">${answers[i].str}</label><br>
+                                            <label for="q${qNum}a${i+1}">${answers[i].str}</label>
                                         </div>
                                     `
                                 }
@@ -75,18 +85,28 @@ const multiAnswer = ({ question, answers, qNum, qTotal })  => {
                                 let str = ''
                                 for (let i = 0; i < answersLength; i++) {
                                     if (answers[i].bool) str += `
-                                        if (q${qNum}a${i+1}.checked) q${qNum}a${i+1}.parentElement.className = 'correct';
-                                        else q${qNum}a${i+1}.parentElement.className = 'correction';
+                                        if (q${qNum}a${i+1}.checked) q${qNum}a${i+1}.parentElement.style.backgroundColor = 'rgba(0, 255, 0, 0.4)';
+                                        else q${qNum}a${i+1}.parentElement.style.backgroundColor = 'rgba(255, 255, 0, 0.5)';
                                         q${qNum}a${i+1}.disabled = true;
                                     `
                                     else str += `
-                                        if (q${qNum}a${i+1}.checked) q${qNum}a${i+1}.parentElement.className = 'incorrect';
+                                        if (q${qNum}a${i+1}.checked) q${qNum}a${i+1}.parentElement.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
                                         q${qNum}a${i+1}.disabled = true;
                                     `
                                 }
                                 return str
                             })()}
                             this.disabled = true;
+                            if (
+                                questionsArr[${qNum - 1}].data.score.incorrect <= 0 &&
+                                questionsArr[${qNum - 1}].data.score.correct >= ${((arr = [])=>{
+                                    for (let i = 0; i < answersLength; i++) {
+                                        if (answers[i].bool === true) arr.push(true)
+                                    }
+                                    return arr
+                                })().length}
+                            ) new Audio('./correct.wav').play(), qNum${qNum}.parentElement.style.backgroundColor = 'rgba(0, 255, 0, 0.4)';
+                            else new Audio('./incorrect.wav').play(), qNum${qNum}.parentElement.style.backgroundColor = 'rgba(255, 0, 0, 0.4)';
                         " id="sub${qNum}"> SUBMIT ANSWERS HERE </button>
 
                         
