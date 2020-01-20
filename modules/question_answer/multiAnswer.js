@@ -57,25 +57,24 @@ const multiAnswer = ({ question, answers, qNum, qTotal })  => {
                             for (let i = 0; i < answersLength; i++) {
                                 if (answers[i].bool === true) {
                                     str += `
-                                        <div onclick="
+                                        <label onclick="
                                             if (q${qNum}a${i+1}.checked === true && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'rgba(0, 255, 255, 0.3)';
                                             else if (q${qNum}a${i+1}.checked === false && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'white';     
                                         ">
                                             <input type="checkbox" name="q${qNum}" id="q${qNum}a${i+1}">
-                                            <label for="q${qNum}a${i+1}">${answers[i].str}</label>
-                                        </div>
+                                            <span for="q${qNum}a${i+1}">${answers[i].str}</span>
+                                        </label>
                                     `
                                 }
                                 else {
                                     str += `
-                                        <div onclick="
-                                            q${qNum}a${i+1}.checked = true;
+                                        <label onclick="
                                             if (q${qNum}a${i+1}.checked === true && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'rgba(0, 255, 255, 0.3)';
                                             else if (q${qNum}a${i+1}.checked === false && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'white';     
                                         ">
                                             <input type="checkbox" name="q${qNum}" id="q${qNum}a${i+1}">
-                                            <label for="q${qNum}a${i+1}">${answers[i].str}</label>
-                                        </div>
+                                            <span for="q${qNum}a${i+1}">${answers[i].str}</span>
+                                        </label>
                                     `
                                 }
                             }

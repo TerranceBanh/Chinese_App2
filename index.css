@@ -21,7 +21,7 @@ fieldset{
     margin: 0;
 }
 
-div {
+label {
     display: inline-flex;
     width: 50%;
     min-height: 5rem;
@@ -42,11 +42,9 @@ input {
     margin: 0;
     padding: 0;
     border: 0;
-    width: 0;
-    height: 0;
 }
 
-fieldset label {
+span {
     font-size: 2rem;
     width: 75%;
     text-align: center;
