@@ -22,7 +22,11 @@ const promiseProcessing = (arr) => {
         })
         .then((res) => {
             for (let i = 0; i < arr.length; i++) {
-                document.write(arr[i].html())        
+                document.write(
+                    arr[i]
+                        .html()
+                        .replace(/>\s{2,}|\n</gi, '>')
+                )        
             }
             return res
         })

@@ -69,6 +69,7 @@ const multiAnswer = ({ question, answers, qNum, qTotal })  => {
                                 else {
                                     str += `
                                         <div onclick="
+                                            q${qNum}a${i+1}.checked = true;
                                             if (q${qNum}a${i+1}.checked === true && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'rgba(0, 255, 255, 0.3)';
                                             else if (q${qNum}a${i+1}.checked === false && q${qNum}a${i+1}.disabled === false) this.style.backgroundColor = 'white';     
                                         ">

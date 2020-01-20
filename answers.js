@@ -45,7 +45,7 @@ const answers = {
         { ch: '父母', pinyin: 'fù mǔ', en: 'father and mother / parents', }, 
         { ch: '爸爸', pinyin: 'bà ba', en: 'father', }, 
         { ch: '父亲', pinyin: 'fù qīn', en: 'father (formal)', },
-        { ch: '妈妈', pinyin: 'Mā mā', en: 'mother', }, 
+        { ch: '妈妈', pinyin: 'mā mā', en: 'mother', }, 
         { ch: '母亲', pinyin: 'mǔ qīn', en: 'mother (formal)', }, 
         { ch: '继母', pinyin: 'jì mǔ', en: 'step mother', }, 
         { ch: '哥哥', pinyin: 'gē ge', en: 'older brother', }, 
@@ -54,11 +54,11 @@ const answers = {
         { ch: '妹妹', pinyin: 'mèi mèi', en: 'younger sister', },
     
         { ch: '配偶', pinyin: 'pèi ǒu', en: 'spouse', }, 
-        { ch: '先生', pinyin: 'xiān sheng', en: 'Mister', }, 
+        { ch: '先生', pinyin: 'xiān sheng', en: 'mister', }, 
         { ch: '丈夫', pinyin: 'zhàng fu', en: 'husband (formal)', }, 
         { ch: '老公', pinyin: 'lǎo gong', en: '(informal) husband', }, 
-        { ch: '太太', pinyin: 'tài tai', en: 'Missus', }, 
-        { ch: '夫人', pinyin: 'fū rén', en: 'Missus (old chinese)', }, 
+        { ch: '太太', pinyin: 'tài tai', en: 'missus', }, 
+        { ch: '夫人', pinyin: 'fū rén', en: 'missus (old chinese)', }, 
         { ch: '妻子', pinyin: 'qī zi', en: 'wife (formal)', },
         { ch: '老婆', pinyin: 'lǎo pó', en: '(informal) wife', },
     
@@ -120,9 +120,9 @@ const answers = {
         {ch: '现在', pinyin: 'xiàn zài', en: 'now', }, // Ask what is the difference between 目前 and 现在
         {ch: '过去', pinyin: 'guò qù', en: 'past', },
     
-        // {ch: '早上', pinyin: 'Zǎoshang', en: 'morning', },
-        // {ch: '下午', pinyin: 'Xiàwǔ', en: 'afternoon', },
-        // {ch: '晚上', pinyin: 'Wǎnshàng', en: 'evening/night', },
+        // {ch: '早上', pinyin: 'zǎoshang', en: 'morning', },
+        // {ch: '下午', pinyin: 'xiàwǔ', en: 'afternoon', },
+        // {ch: '晚上', pinyin: 'wǎnshàng', en: 'evening/night', },
         // {ch: '黄昏', pinyin: '', en: 'dusk', },
         // {ch: '黎明', pinyin: '', en: 'dawn', },
         
@@ -175,7 +175,7 @@ const answers = {
         {ch: '黑色', pinyin: 'hēi sè', en: 'black', },
         {ch: '粉红色', pinyin: 'fěn hóng sè', en: 'pink', },
         {ch: '红色', pinyin: 'hóng sè', en: 'red', },
-        {ch: '蓝色', pinyin: 'Lán sè', en: 'blue', },
+        {ch: '蓝色', pinyin: 'lán sè', en: 'blue', },
         {ch: '绿色', pinyin: 'lǜ sè', en: 'green', },
         {ch: '黄色', pinyin: 'huáng sè', en: 'yellow', },
         {ch: '紫色', pinyin: 'zǐ sè', en: 'purple', },
@@ -209,15 +209,136 @@ const answers = {
         {ch: '下午好', pinyin: 'xià wǔ hǎo', en: 'good afternoon', },
         {ch: '晚上好', pinyin: 'wǎn shàng hǎo', en: 'good evening', },
         {ch: '晚安', pinyin: 'wǎn\'ān', en: 'good night', },
-        {ch: '你怎么样', pinyin: 'nǐ zěn me yàng?', en: 'How is it going', },
-        {ch: '你的周末怎么样', pinyin: 'nǐ de zhōumò zěnme yàng', en: 'How was your weekend', },
+        {ch: '你怎么样', pinyin: 'nǐ zěn me yàng?', en: 'how is it going', },
+        {ch: '你的周末怎么样', pinyin: 'nǐ de zhōumò zěnme yàng', en: 'how was your weekend', },
         {ch: '回头见', pinyin: 'huí tóu jiàn', en: 'see you soon', },
         {ch: '下个星期见', pinyin: 'xià gè xīng qí jiàn', en: 'see you next week', },
         {ch: '改天再聊', pinyin: 'gǎi tiān zài liáo', en: 'talk to you later', },
-        {ch: '慢走', pinyin: 'màn zǒu', en: 'Take care', },
+        {ch: '慢走', pinyin: 'màn zǒu', en: 'take care', },
         
         
     ],
+    people: [
+        // {ch: '学者', pinyin: 'Xuézhě', en: 'scholar', },
+        // {ch: '学生', pinyin: 'Xuéshēng', en: 'student', },
+        // {ch: '领导', pinyin: 'Lǐngdǎo', en: 'leader', },
+        // {ch: '男', pinyin: 'Nán', en: 'male', },
+        // {ch: '女', pinyin: 'Nǚ', en: 'female', },
+        // {ch: '男孩', pinyin: 'Nánhái', en: 'boy', },
+        // {ch: '女孩', pinyin: 'Nǚhái', en: 'girl', },
+        // {ch: '朋友', pinyin: 'Péngyǒu', en: 'friend', },
+        // {ch: '人', pinyin: 'Rén', en: 'people/person', },
+        // {ch: '会员', pinyin: 'Huìyuán', en: 'member', },
+        // {ch: '房东', pinyin: 'Fángdōng', en: 'landlord', },
+        // {ch: '队友', pinyin: 'Duìyǒu', en: 'teammate/parter', },
+        // {ch: '服务员', pinyin: 'Fúwùyuán', en: 'Service Worker', },
+        // {ch: '参加者', pinyin: 'Cānjiā zhě', en: 'Attendee', },
+        // {ch: '导师', pinyin: 'Dǎoshī', en: 'tutor', },
+        // {ch: '对手', pinyin: 'Duìshǒu', en: 'opponent', },
+        // {ch: '师傅', pinyin: 'Shīfù', en: 'master', },
+        // {ch: '士兵', pinyin: 'Shìbīng', en: 'soilder', },
+        // {ch: '英雄', pinyin: 'Yīngxióng', en: 'hero', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+
+    ],
+    
+    
+    jobs: [
+        // {ch: '技术员', pinyin: 'Jìshùyuán', en: 'technician', },
+        // {ch: '出纳员', pinyin: 'Chūnà yuán', en: 'cashier', },
+        // {ch: '图书管理员', pinyin: 'Túshū guǎnlǐ yuán', en: 'Librarian', },
+        // {ch: '接待员', pinyin: 'Jiēdài yuán', en: 'receptionist', },
+        // {ch: '秘书', pinyin: 'Mìshū', en: 'secretary', },
+        // {ch: '电话推销员', pinyin: 'Diànhuà tuīxiāo yuán', en: 'Telemarketer', },
+        // {ch: '推销员', pinyin: 'Tuīxiāo yuán', en: 'saleman', },
+        // {ch: '分析员', pinyin: 'Fēnxī yuán', en: 'Analyst', },
+        // {ch: '营销人员', pinyin: 'Yíngxiāo rényuán', en: 'Marketer', },
+        // {ch: '工程师', pinyin: 'Gōngchéngshī', en: 'engineer', },
+        // {ch: '老师', pinyin: 'Lǎoshī', en: 'teacher', },
+        // {ch: '培训师', pinyin: 'Péixùn shī', en: 'Trainer', },
+        // {ch: '律师', pinyin: 'Lǜshī', en: 'lawyer', },
+        // {ch: '治疗师', pinyin: 'Zhìliáo shī', en: 'Therapist', },
+        // {ch: '理发师', pinyin: 'Lǐfǎ shī', en: 'barber', },
+        // {ch: '劳动者', pinyin: 'láodòng zhě', en: 'laborer', },
+        // {ch: '译者', pinyin: 'Yì zhě', en: 'translator', },
+        // {ch: '历史学家', pinyin: ''Lìshǐ xué jiā, en: 'historian', },
+        // {ch: '地质学家', pinyin: 'Dìzhí xué jiā', en: 'geologist', },
+        // {ch: '艺术家', pinyin: 'Yìshùjiā', en: 'artist', },
+        // {ch: '管家', pinyin: 'Guǎnjiā', en: 'housekeeper', },
+        // {ch: '经纪人', pinyin: 'Jīngjì rén', en: 'broker', },
+        // {ch: '主人', pinyin: 'Zhǔrén', en: 'host (noun)', },
+        // {ch: '广告文字撰稿人', pinyin: 'Zhuàn gǎo rén', en: 'copywriter', },
+        // {ch: '机械', pinyin: 'jīxiè', en: 'mechanic', },
+        // {ch: '经理', pinyin: 'Jīnglǐ', en: 'manager', },
+        // {ch: '人力资源', pinyin: 'Rénlì zīyuán', en: 'human resourses', },
+        // {ch: '护士', pinyin: 'Hùshì', en: 'nurse', },
+        // {ch: '医生', pinyin: 'Yīshēng', en: 'doctor', },
+        // {ch: '开发商', pinyin: 'Kāifā shāng', en: 'developer', },
+        // {ch: '教练', pinyin: 'Jiàoliàn', en: 'coach', },
+        // {ch: '算子', pinyin: 'Suàn zi', en: 'operator', },
+        // {ch: '助理', pinyin: 'Zhùlǐ', en: 'assistant', },
+        // {ch: '警官', pinyin: 'Jǐngguān', en: 'police officer', },
+        // {ch: '信使', pinyin: 'Xìnshǐ', en: 'mailman', },
+        // {ch: '园丁', pinyin: 'Yuándīng', en: 'landscaper', },
+        // {ch: '兽医', pinyin: 'Shòuyī', en: 'Veterinarian', },
+        // {ch: '代客', pinyin: 'Dài kè', en: 'valet', },
+        // {ch: '编剧', pinyin: 'Biānjù', en: 'Screenwriter', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+        // {ch: '', pinyin: '', en: '', },
+
+    ],
+    food: [],
+    school: [],
+    food: [],
+    animals: [],
+    weather: [],
+    sports: [],
+    tools: [],
+    vehicles: [],
+    furniture: [],
+    building: [],
+    electric: [],
+    plumbing: [],
+    clothes: [],
+    materials: [],
+    electronics: [],
+    verbs: [],
+    adjectives: [],
+    phrases: [],
+    office: [],
+    government: [],
+    geography: [],
+    medical: [],
 }
 
 for (let prop in answers) {
@@ -232,50 +353,9 @@ for (let prop in answers) {
 }
 
 // INDICATE MALE AND FEMALE AND FORMAL AND POLITE
-// const people
-
-// const school
 
 
 
-// const food
 
-// const animals
 
-// const weather
 
-// const sports
-
-// const tools
-
-// const vehicles
-
-// const jobs
-
-// const furniture
-
-// const building
-
-// const electric
-
-// const plumbing
-
-// const clothes
-
-// const materials
-
-// const electronics
-
-// const verbs
-
-// const adjectives
-
-// const phrases
-
-// const office
-
-// const government
-
-// const geography
-
-// const medical

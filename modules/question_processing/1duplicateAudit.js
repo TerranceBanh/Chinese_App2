@@ -12,32 +12,23 @@ const duplicateAudit = (arr) => {// Take array of objects with property str and 
         let library = arr[i].library 
         for (let j = 0; j < answersLen; j++) {
             let answer1 = answersArr[j].str // Cached for performance
-            for (let k = 0; k < answersLen; k++) {
-                let answer2 = answersArr[k].str
-                if (answer1 === answer2 && j !== k) {
-                    // TESTING CODE
-                    // To ensure removal of a duplicate correct answer1 that indicates as wrong
-                    let index
-                    if (answersArr[k].bool === false) index = k
-                    else index = j
-                    // TESTING CODE
-                    answersArr.splice(index, 1, { str: 'DUPLICATE ANSWER', bool: false })
+            for (let i = 0; i < 4; i++) { // PROCESS IS TEMPORARILY DUPLICATED TO DEAL WITH BUG
+                for (let k = 0; k < answersLen; k++) {
+                    let answer2 = answersArr[k].str
+                    if (answer1 === answer2 && j !== k) {
+                        // TESTING CODE
+                        // To ensure removal of a duplicate correct answer1 that indicates as wrong
+                        let index
+                        if (answersArr[k].bool === false) index = k
+                        else index = j
+                        // TESTING CODE
+                        answersArr.splice(index, 1, { str: 'DUPLICATE ANSWER', bool: false })
+                    }
                 }
+                
             }
 
-            // PROCESS IS TEMPORARILY DOUBLED TO DEAL WITH BUG
-            for (let k = 0; k < answersLen; k++) {
-                let answer2 = answersArr[k].str
-                if (answer1 === answer2 && j !== k) {
-                    // TESTING CODE
-                    // To ensure removal of a duplicate correct answer1 that indicates as wrong
-                    let index
-                    if (answersArr[k].bool === false) index = k
-                    else index = j
-                    // TESTING CODE
-                    answersArr.splice(index, 1, { str: 'DUPLICATE ANSWER', bool: false })
-                }
-            }
+
         }
         for (let j = 0; j < answersLen; j++) {
             if (answersArr[j].str !== 'DUPLICATE ANSWER') filterArr.push(answersArr[j])
